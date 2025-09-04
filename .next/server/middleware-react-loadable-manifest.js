@@ -1,0 +1,1 @@
+self.__REACT_LOADABLE_MANIFEST="{\"pages\\\\index.tsx -> ../components/Editor\":{\"id\":\"pages\\\\index.tsx -> ../components/Editor\",\"files\":[\"static/chunks/components_Editor_tsx.js\"]}}"
