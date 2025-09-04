@@ -8,7 +8,7 @@ import FloatingToolbar from './FloatingToolbar';
 type Props = {
   content: string;
   onUpdate: (html: string) => void;
-}
+};
 
 export default function Editor({ content, onUpdate }: Props) {
   const editor = useEditor({
@@ -32,7 +32,10 @@ export default function Editor({ content, onUpdate }: Props) {
 
   if (!editor) return null;
 
-  const makeHeading = (level: number) => {
+  // -----------------------------
+  // Toolbar actions (type-safe)
+  // -----------------------------
+  const makeHeading = (level: 1 | 2 | 3 | 4 | 5 | 6) => {
     editor.chain().focus().toggleHeading({ level }).run();
   };
 
@@ -43,14 +46,20 @@ export default function Editor({ content, onUpdate }: Props) {
   return (
     <div className="editor-container">
       <div className="toolbar-bar">
+        <button onClick={() => makeHeading(1)}>H1</button>
         <button onClick={() => makeHeading(2)}>H2</button>
+        <button onClick={() => makeHeading(3)}>H3</button>
         <button onClick={bold}>Bold</button>
         <button onClick={italic}>Italic</button>
-        <button className="secondary" onClick={bullet}>• List</button>
+        <button className="secondary" onClick={bullet}>
+          • List
+        </button>
       </div>
+
       <div className="editor">
         <EditorContent editor={editor} />
       </div>
+
       <FloatingToolbar editor={editor} />
     </div>
   );
