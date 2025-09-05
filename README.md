@@ -49,7 +49,7 @@ TAVILY_API_KEY=your_tavily_api_key_here
 - POST `/api/agent` with `{ "query": "Find latest news on Next.js 15" }`.
 - Calls **Tavily** for web results and (if `OPENAI_API_KEY` is present) returns a clean summary.
 
-## 4) Deploy
+## 4) Deploy        https://live-collaborative-editor-3uya.vercel.app/
 
 ### Vercel
 - Push the folder to GitHub.
@@ -62,3 +62,4 @@ TAVILY_API_KEY=your_tavily_api_key_here
 - This is not production-grade. It’s intentionally small and readable for a 6-hour assignment.
 - Styling uses plain CSS for portability.
 - If you want Tailwind or Gemini instead, it’s easy to swap.
+
